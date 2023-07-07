@@ -24,6 +24,15 @@ export default function TextForm(props) {
 
     setText(temp)
 }
+const handleCopy=()=>{
+  var text=document.getElementById("textarea");
+  text.select();
+  navigator.clipboard.writeText(text.value);
+}
+const handleExtraSpaces=()=>{
+  const newText=text.split(/[ ]+/);
+  setText(newText.join(" "));
+}
   const speak = () => {
     let msg = new SpeechSynthesisUtterance();
     msg.text = text;
@@ -40,7 +49,7 @@ export default function TextForm(props) {
         <h1>{props.heading}</h1>
         <textarea
           className="form-control"
-          id="exampleFormControlTextarea1"
+          id="textarea"
           value={text}
           onChange={handleOnChange}
           rows="8"
@@ -60,6 +69,8 @@ export default function TextForm(props) {
         <button className="btn btn-danger my-2 mx-1" onClick={handleClearText}>
           Clear text
         </button>
+        <button className="btn btn-success my-2 mx-1" onClick={handleCopy}>Copy Text</button>
+        <button className="btn btn-success my-2 mx-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
       </div>
       <div className="container my-2">
         <h2>Your text summary</h2>
