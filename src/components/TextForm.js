@@ -79,7 +79,7 @@ const handleExtraSpaces=()=>{
         </p>
         <p>{0.008 * text.split(" ").length} Minuutes Read</p>
         <h3>Preview</h3>
-        <p>{text}</p>
+        <p>{text.length>0?text:"Enter something to preview here"}</p>
       </div>
     </>
   );
