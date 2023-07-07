@@ -1,0 +1,35 @@
+[33mcommit 6edbaa8424e649b230a05e1f960e6c1421a7b17c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Aditya Mishra <mishra.aditya1352@gmail.com>
+Date:   Fri Jul 7 12:21:32 2023 +0530
+
+    Created the aboutus page and enabled dark mode/lightmode
+
+[33mcommit 23cf5eba8805f0d72bb4ce8c38e20e20ef9c1c9f[m
+Author: Aditya Mishra <mishra.aditya1352@gmail.com>
+Date:   Thu Jul 6 21:48:54 2023 +0530
+
+    Added more features
+
+[33mcommit 9d19f6db58ce5251ce43b850bd78d0087c186963[m
+Author: Aditya Mishra <mishra.aditya1352@gmail.com>
+Date:   Thu Jul 6 20:39:59 2023 +0530
+
+    LowerCase
+
+[33mcommit e5b42dc9ef671d6b24f6314f7a0fa8101b89c393[m
+Author: Aditya Mishra <mishra.aditya1352@gmail.com>
+Date:   Thu Jul 6 20:31:53 2023 +0530
+
+    Learnt about states
+
+[33mcommit ad99a6148630564f2b393f3a94a2e64f2dc38eb0[m
+Author: Aditya Mishra <mishra.aditya1352@gmail.com>
+Date:   Thu Jul 6 19:54:44 2023 +0530
+
+    Text Utilities
+
+[33mcommit c16327b8659b2d253d80b6033bd24de017e87c9e[m
+Author: Aditya Mishra <mishra.aditya1352@gmail.com>
+Date:   Wed Jul 5 21:16:21 2023 +0530
+
+    Initialize project using Create React App

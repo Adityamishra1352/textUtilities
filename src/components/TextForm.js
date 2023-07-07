@@ -46,13 +46,13 @@ const handleExtraSpaces=()=>{
   return (
     <>
       <div className="mb-3 container my-2">
-        <h1>{props.heading}</h1>
+        <h1 style={{color: props.mode==='light'?'black':'white'}}>{props.heading}</h1>
         <textarea
           className="form-control"
           id="textarea"
           value={text}
           onChange={handleOnChange}
-          rows="8"
+          rows="8"  style={{backgroundColor: props.mode==='light'?'white':'gray', color: props.mode==='light'?'black':'white'}}
         ></textarea>
         <button className="btn btn-primary my-2 mx-1" onClick={handleClick}>
           Convert to Upper Case
@@ -72,7 +72,7 @@ const handleExtraSpaces=()=>{
         <button className="btn btn-success my-2 mx-1" onClick={handleCopy}>Copy Text</button>
         <button className="btn btn-success my-2 mx-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
       </div>
-      <div className="container my-2">
+      <div className="container my-2" style={{color: props.mode==='light'?'black':'white'}}>
         <h2>Your text summary</h2>
         <p>
           {text.split(" ").length} words and {text.length} characters
