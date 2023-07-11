@@ -2,6 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export default function Navbar(props) {
+  const handleColorChange=(event)=>{
+    var color=event.target.value;
+    props.onColorChange(color);
+  }
   return (
     <nav
       className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
@@ -34,6 +38,10 @@ export default function Navbar(props) {
               </a>
             </li>
           </ul>
+          <div className={`form-input mx-3 text-${props.mode==='light'?'dark':'light'}`}>
+            <input type="color" name="for-input" id="for-input" onChange={handleColorChange}/>
+            <label className="for-input">Change Color of the website</label>
+          </div>
           <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
             <input
               className="form-check-input"

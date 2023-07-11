@@ -5,6 +5,11 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 function App() {
+  const [selectedColor,setSelectedColor]=useState('#000000');
+  const handleColorChange=(color)=>{
+    setSelectedColor(color);
+    document.body.style.backgroundColor=selectedColor;
+  }
   const[darkMode,setDarkMode]=useState('light');
   const[alert,setAlert]=useState(null);
   const showAlert=(message,type)=>{
@@ -19,7 +24,7 @@ function App() {
   const toggleMode=()=>{
     if(darkMode==='light'){
       setDarkMode("dark");
-      document.body.style.backgroundColor="grey";
+      document.body.style.backgroundColor="gray";
       showAlert("Dark Mode has been enabled", "success");
     }
     else{
@@ -30,7 +35,7 @@ function App() {
   }
   return (
     <>
-<Navbar title="textUtils" about="About TextUtils" mode={darkMode} toggleMode={toggleMode}></Navbar>
+<Navbar title="textUtils" about="About TextUtils" mode={darkMode} toggleMode={toggleMode} selectedColor={selectedColor} onColorChange={handleColorChange}></Navbar>
 <Alert alert={alert}></Alert>
 <div className="container">
 <TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={darkMode}></TextForm>
