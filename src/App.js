@@ -12,6 +12,9 @@ function App() {
       msg:message,
       type:type
     })
+    setTimeout(() => {
+      showAlert(null);
+    }, 3000);
   }
   const toggleMode=()=>{
     if(darkMode==='light'){
@@ -30,7 +33,7 @@ function App() {
 <Navbar title="textUtils" about="About TextUtils" mode={darkMode} toggleMode={toggleMode}></Navbar>
 <Alert alert={alert}></Alert>
 <div className="container">
-<TextForm heading="Enter the text to analyze" mode={darkMode}></TextForm>
+<TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={darkMode}></TextForm>
 {/* <About></About> */}
 </div>
     </>

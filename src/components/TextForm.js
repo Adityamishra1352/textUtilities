@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 export default function TextForm(props) {
   const handleClick = () => {
-    console.log("Uppercase was clicked");
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("The text has been converted to uppercase","success");
   };
   const handleOnChange = (event) => {
     setText(event.target.value);
@@ -12,6 +12,7 @@ export default function TextForm(props) {
   const handleLowerCase = (event) => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("The text has been converted to Lowercase","success");
   };
   const capitalized=()=>{
     var arr = text.split(" ")
@@ -23,23 +24,28 @@ export default function TextForm(props) {
     }
 
     setText(temp)
+    props.showAlert("The capitalization process has completed","success");
 }
 const handleCopy=()=>{
   var text=document.getElementById("textarea");
   text.select();
   navigator.clipboard.writeText(text.value);
+  props.showAlert("The text has been copied","success");
 }
 const handleExtraSpaces=()=>{
   const newText=text.split(/[ ]+/);
   setText(newText.join(" "));
+  props.showAlert("The text has been trimed of extra spaces","success");
 }
   const speak = () => {
     let msg = new SpeechSynthesisUtterance();
     msg.text = text;
     window.speechSynthesis.speak(msg);
+    props.showAlert("The text is now been spoke of","success");
   };
   const handleClearText = (event) => {
     setText("");
+    props.showAlert("The text has been cleared","success");
   };
   const [text, setText] = useState("");
   // setText("hii i am aditya");
